@@ -1,0 +1,77 @@
+interval_sim 20 # simulation timestep in milliseconds
+interval_real 20
+
+define map model
+(
+  color "gray30"
+  boundary 0 
+  gui_nose 0
+  gui_grid 0
+  gui_move 0
+  gui_outline 1
+  obstacle_return 1
+  gripper_return 0
+  fiducial_return 0
+  laser_return 1
+)
+
+define diff_robot position
+(
+  size [0.240 0.240 0.300]
+  origin [0.000 0.000 0.000 0.000]
+  gui_nose 1
+  laser_return 1
+  obstacle_return 0
+
+  drive "diff"
+  bitmap "robot.png"
+
+  hokuyo( pose [0.110 0.000 -0.100 0.000] )
+)
+
+define moving_obstacle position
+(
+  size [0.240 0.240 0.300]
+  origin [0.000 0.000 0.000 0.000]
+  gui_nose 1
+  laser_return 1
+  obstacle_return 0
+
+  drive "diff"
+  bitmap "robot.png"
+
+  hokuyo( pose [0.110 0.000 -0.100 0.000] )
+)
+
+define hokuyo ranger
+(
+  sensor(
+    range [0.0 4.0]
+    fov 180
+    samples 512
+    size [ 0.05 0.05 0.1 ]
+    )
+  # generic model properties
+  color "black"
+)
+
+map
+(
+  name "medium"
+  size [30.000 30.000 0.500]
+  pose [0.000 0.000 0.000 0.000]
+  bitmap "empty.pgm"
+)
+
+diff_robot(pose [ -3.277 -0.119 0.000 -10.751 ] name "robot_0" color "green")
+diff_robot(pose [ 0.488 -3.897 0.000 -3.772 ] name "robot_1" color "red")
+diff_robot(pose [ 4.000 0.000 0.000 1.570 ] name "robot_2" color "orange")
+diff_robot(pose [ -4.000 4.000 0.000 1.570 ] name "robot_3" color "yellow")
+diff_robot(pose [ 4.000 4.000 0.000 1.570 ] name "robot_4" color "HotPink")
+
+moving_obstacle(pose [ -2.000 2.000 0.000 -36.000 ] name "obstacle_0" color "black")
+moving_obstacle(pose [ 1.900 2.000 0.000 -36.000 ] name "obstacle_1" color "black")
+moving_obstacle(pose [ -2.000 -2.800 0.000 -36.000 ] name "obstacle_2" color "black")
+moving_obstacle(pose [ 2.400 -2.000 0.000 -36.000 ] name "obstacle_3" color "black")
+moving_obstacle(pose [ -1.000 -1.000 0.000 -36.000 ] name "obstacle_4" color "black")
+

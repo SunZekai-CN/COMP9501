@@ -1,11 +1,10 @@
 ### Launch the Stage simulator
 Launch the Stage simulator (We assume that you already have installed the Stage simulator. ) by: 
 ```
-   ros2 run stage_ros stageros -u src/stage_ros/world/task_5.world
+   ros2 run stage_ros stageros -u task_5.world
 ```
 
-* 'src/stage\_ros/world/task\_5.world' 
-is the path of world file, which describes the training environment consisting of a map, robots, obstacles and so on. If you want the robots move in a new environment, you should make a new world file to describe the environment. 
+* 'task\_5.world' describes the training environment consisting of a map, robots, obstacles and so on. If you want the robots move in a new environment, you should make a new world file to describe the environment. 
 * We use this world file just because the environment in this word file satisfy the requirement of our task on the number of robots,obstacles and so on.
 ### Wake up each robot
 Follow the guide of 'config.yaml.sample' and fill the file 'config-deploy.yaml' with the IP addresses of each robot process. Then you can start the leader process by :
