@@ -1,0 +1,13 @@
+# simulator related
+# list of Ethernet (or other fast link) IPs of the machines, the first one should be the IP of this machine
+# the first one should be the ip of the oracle which connects the robots with the simulated env somehow (via Ethernet, but doesn't have to)
+sim_ips:
+# the port of the oracle
+oracle_port:
+num_obstacles:
+
+# training related
+ray_head_ip:         # 'auto' or IP of the ray head
+redis_password:      # redis password ray told you
+param_server_ip:     # wireless NIC IP of the parameter server, usually you should set it to this machine
+placement:           # 'pack' or 'spread', 'pack' for debugging on fewer machines
